@@ -24,7 +24,9 @@ function App() {
       <div
         id="editor"
         className={`${
-          activeTab === "Markdown" ? "hidden" : "flex flex-col grow mt-10"
+          activeTab === "Markdown"
+            ? "hidden"
+            : "flex flex-col grow pt-10 bg-slate-900"
         } `}
       >
         <button
@@ -36,23 +38,30 @@ function App() {
         </button>
 
         {/* Label for screen reader */}
-        <label htmlFor="editor" className="text-lg font-bold mb-2 hidden">
+        <label htmlFor="textArea" className="text-lg font-bold mb-2 hidden">
           Markdown Editor
         </label>
         <textarea
-          id="editor"
+          id="textArea"
           value={markdown}
           onChange={handleMarkdownChange}
           name="Editor"
-          className="w-full grow p-4 bg-slate-950 text-slate-200"
+          className="w-full grow p-4 bg-slate-900 text-slate-200"
         ></textarea>
       </div>
       <div
         id="markdown"
         className={`${
           activeTab === "Editor" ? "hidden" : "flex"
-        } flex-col mt-10 px-6 bg-slate-950`}
+        } flex-col pt-10 bg-slate-900 grow`}
       >
+        <button
+          type="button"
+          className="bg-slate-400 p-2 w-[400px] mx-auto mb-10 hover:bg-slate-500 text-black font-bold duration-200"
+          onClick={() => saveMarkdown(markdown)}
+        >
+          Save Markdown
+        </button>
         <MarkdownToHtml markdown={markdown} />
       </div>
     </AppShell>

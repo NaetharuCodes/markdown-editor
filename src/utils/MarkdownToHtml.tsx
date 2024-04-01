@@ -56,7 +56,7 @@ const MarkdownToHtml = ({ markdown }: MarkdownToHtmlProps) => {
 
   return (
     <div
-      className="bg-slate-950 text-slate-200 my-6"
+      className="bg-slate-900 text-slate-200 mx-4 grow"
       dangerouslySetInnerHTML={{ __html: cleanHtml }}
     />
   );
