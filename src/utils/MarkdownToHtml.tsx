@@ -1,5 +1,4 @@
 import DOMPurify from "dompurify";
-import StarIcon from "../components/icons/StarIcon";
 
 interface MarkdownToHtmlProps {
   markdown: string;
