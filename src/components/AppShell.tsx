@@ -8,7 +8,7 @@ const AppShell = ({ children }: AppShellProps) => {
       <header className="h-[72px] bg-slate-800 flex justify-center items-center text-white text-2xl font-bold">
         Markdown-Editor
       </header>
-      <div className="grow">{children}</div>
+      <div className="grow flex flex-col">{children}</div>
       <footer className="h-[72px] bg-slate-800 flex justify-center items-center text-white text-sm font-light">
         Created by James Bridge (2024)
       </footer>
