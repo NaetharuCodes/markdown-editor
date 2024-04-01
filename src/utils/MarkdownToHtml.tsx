@@ -31,13 +31,13 @@ const MarkdownToHtml = ({ markdown }: MarkdownToHtmlProps) => {
       html += line.replace(
         "```",
         inCodeBlock
-          ? "<code><pre class='bg-slate-200 p-2 text-xs whitespace-pre-wrap break-words'>"
+          ? "<code><pre class='bg-slate-700 p-2 text-xs whitespace-pre-wrap break-words my-6'>"
           : "</pre></code>"
       );
     } else if (line.startsWith("-")) {
       if (!inList) {
         inList = true;
-        html += "<ul class='my-4'>";
+        html += "<ul class='my-6 mx-6'>";
       }
       html += `<li class='list-disc pr-2'>${line.replace("-", "")}</li>`;
     } else {
@@ -54,7 +54,12 @@ const MarkdownToHtml = ({ markdown }: MarkdownToHtmlProps) => {
 
   const cleanHtml = DOMPurify.sanitize(html);
 
-  return <div dangerouslySetInnerHTML={{ __html: cleanHtml }} />;
+  return (
+    <div
+      className="bg-slate-950 text-slate-200 my-6"
+      dangerouslySetInnerHTML={{ __html: cleanHtml }}
+    />
+  );
 };
 
 export default MarkdownToHtml;

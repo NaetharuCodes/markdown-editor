@@ -24,8 +24,8 @@ function App() {
       <div
         id="editor"
         className={`${
-          activeTab === "Markdown" ? "hidden" : "flex flex-col grow mt-10 "
-        }`}
+          activeTab === "Markdown" ? "hidden" : "flex flex-col grow mt-10"
+        } `}
       >
         <button
           type="button"
@@ -44,14 +44,14 @@ function App() {
           value={markdown}
           onChange={handleMarkdownChange}
           name="Editor"
-          className="w-full grow p-4"
+          className="w-full grow p-4 bg-slate-950 text-slate-200"
         ></textarea>
       </div>
       <div
         id="markdown"
         className={`${
           activeTab === "Editor" ? "hidden" : "flex"
-        } flex-col mt-10 px-6`}
+        } flex-col mt-10 px-6 bg-slate-950`}
       >
         <MarkdownToHtml markdown={markdown} />
       </div>
