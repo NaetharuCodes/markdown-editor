@@ -24,11 +24,23 @@ function App() {
       <div
         id="editor"
         className={`${
-          activeTab === "Markdown" ? "hidden" : "flex flex-col  grow"
+          activeTab === "Markdown" ? "hidden" : "flex flex-col grow mt-10 "
         }`}
       >
-        <button onClick={() => saveMarkdown(markdown)}>Save Markdown</button>
+        <button
+          type="button"
+          className="bg-slate-400 p-2 w-[400px] mx-auto mb-10 hover:bg-slate-500 text-black font-bold duration-200"
+          onClick={() => saveMarkdown(markdown)}
+        >
+          Save Markdown
+        </button>
+
+        {/* Label for screen reader */}
+        <label htmlFor="editor" className="text-lg font-bold mb-2 hidden">
+          Markdown Editor
+        </label>
         <textarea
+          id="editor"
           value={markdown}
           onChange={handleMarkdownChange}
           name="Editor"
@@ -37,7 +49,9 @@ function App() {
       </div>
       <div
         id="markdown"
-        className={`${activeTab === "Editor" ? "hidden" : "flex"} flex-col m-4`}
+        className={`${
+          activeTab === "Editor" ? "hidden" : "flex"
+        } flex-col mt-10 px-6`}
       >
         <MarkdownToHtml markdown={markdown} />
       </div>

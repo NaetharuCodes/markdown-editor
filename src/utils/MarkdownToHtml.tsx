@@ -1,4 +1,5 @@
 import DOMPurify from "dompurify";
+import StarIcon from "../components/icons/StarIcon";
 
 interface MarkdownToHtmlProps {
   markdown: string;
@@ -7,17 +8,48 @@ interface MarkdownToHtmlProps {
 const MarkdownToHtml = ({ markdown }: MarkdownToHtmlProps) => {
   const lines = markdown.split("\n");
   let inCodeBlock = false;
+  let inList = false;
   let html = "";
 
   lines.forEach((line) => {
-    if (line.startsWith("```")) {
+    if (line.startsWith("###")) {
+      html += `<h3 class="text-orange-600 text-lg font-bold mb-2">${line.replace(
+        "###",
+        ""
+      )}</h3>`;
+    } else if (line.startsWith("##")) {
+      html += `<h2 class="text-orange-600 text-xl font-bold mb-2">${line.replace(
+        "##",
+        ""
+      )}</h2>`;
+    } else if (line.startsWith("#")) {
+      html += `<h1 class="text-orange-600 text-2xl font-bold mb-4">${line.replace(
+        "#",
+        ""
+      )}</h1>`;
+    } else if (line.startsWith("```")) {
       inCodeBlock = !inCodeBlock;
       html += line.replace(
         "```",
-        inCodeBlock ? "<code><pre>" : "</pre></code>"
+        inCodeBlock
+          ? "<code><pre class='bg-slate-200 p-2 text-xs whitespace-pre-wrap break-words'>"
+          : "</pre></code>"
       );
+    } else if (line.startsWith("-")) {
+      if (!inList) {
+        inList = true;
+        html += "<ul class='my-4'>";
+      }
+      html += `<li class='list-disc pr-2'>${line.replace("-", "")}</li>`;
     } else {
-      html += inCodeBlock ? line : `<p>${line}</p>`;
+      if (inList) {
+        inList = false;
+        html += "</ul>";
+      } else if (inCodeBlock) {
+        html += `${line}<br />`;
+      } else {
+        html += `<p class="mb-2">${line}</p>`;
+      }
     }
   });
 
