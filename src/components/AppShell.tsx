@@ -4,7 +4,7 @@ interface AppShellProps {
 
 const AppShell = ({ children }: AppShellProps) => {
   return (
-    <div className="flex flex-col justify-between min-h-svh">
+    <div className="flex flex-col justify-between min-h-svh bg-slate-950">
       <header className="h-[72px] bg-slate-800 flex justify-center items-center text-white text-2xl font-bold">
         Markdown-Editor
       </header>
