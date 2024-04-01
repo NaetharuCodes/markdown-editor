@@ -1,6 +1,7 @@
 import { useState } from "react";
 import AppShell from "./components/AppShell";
 import Tabs from "./components/Tabs";
+import { saveMarkdown } from "./utils/markdown";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Editor");
@@ -25,6 +26,7 @@ function App() {
           activeTab === "Markdown" ? "hidden" : "flex flex-col  grow"
         }`}
       >
+        <button onClick={() => saveMarkdown(markdown)}>Save Markdown</button>
         <textarea
           value={markdown}
           onChange={handleMarkdownChange}
