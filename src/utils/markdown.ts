@@ -9,3 +9,7 @@ export const saveMarkdown = (markdown: string): void => {
   document.body.removeChild(link);
   URL.revokeObjectURL(url);
 };
+
+export const formatMarkdown = (markdown: string): string[] => {
+  return markdown.split("\n");
+};

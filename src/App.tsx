@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import AppShell from "./components/AppShell";
 import Tabs from "./components/Tabs";
 import { saveMarkdown } from "./utils/markdown";
+import { MarkdownToHtml } from "./utils/MarkdownToHtml";
 
 function App() {
   const [activeTab, setActiveTab] = useState("Editor");
   const [markdown, setMarkdown] = useState("");
+  const [formattedMarkdown, setFormattedMarkdown] = useState([""]);
 
   const handleMarkdownChange = (
     event: React.ChangeEvent<HTMLTextAreaElement>
   ) => {
     setMarkdown(event.target.value);
   };
+
+  useEffect(() => {
+    console.log(markdown);
+    setFormattedMarkdown(markdown.split("\n"));
+  }, [markdown]);
+
+  useEffect(() => {
+    console.log(formattedMarkdown);
+  }, [formattedMarkdown]);
 
   return (
     <AppShell>
@@ -36,9 +47,11 @@ function App() {
       </div>
       <div
         id="markdown"
-        className={`${activeTab === "Editor" ? "hidden" : "flex"}`}
+        className={`${activeTab === "Editor" ? "hidden" : "flex"} flex-col m-4`}
       >
-        Markdown
+        {formattedMarkdown.map((line, index) => (
+          <MarkdownToHtml key={index} markdown={line} />
+        ))}
       </div>
     </AppShell>
   );
