@@ -2,4 +2,95 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+}
+
+:root {
+  /* MONOCHROMES */
+  --000: #151619;
+  --900: #1d1f22;
+  --800: #2b2d31;
+  --700: #35393f;
+  --600: #5a6069;
+  --500: #7c8187;
+  --400: #c1c4cb;
+  --300: #e4e4e4;
+  --200: #f5f5f5;
+  --100: #ffffff;
+
+  /* ACCENTS */
+  --orange: #e46643;
+  --orange-hover: #f39765;
+}
+
+/* MD TYPOGRAPHY */
+.h1 {
+  font-family: "Roboto Slab", serif;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 28px;
+}
+
+.h3 {
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.h4 {
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.h5 {
+  font-family: "Roboto Slab", serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.h6 {
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+}
+
+.text-std {
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.text-bold {
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: bold;
+}
+
+.text-mono {
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.app-heading-med {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+.app-heading-sm {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.app-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 13px;
+  font-weight: light;
 }
