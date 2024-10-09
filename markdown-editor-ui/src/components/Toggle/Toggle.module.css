@@ -1,0 +1,43 @@
+.button {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--900);
+  border: none;
+}
+
+.sliderBackground {
+  background-color: var(--600);
+  width: 48px;
+  height: 24px;
+  border-radius: 14.5px;
+  position: relative;
+}
+
+.sliderButton {
+  width: 12px;
+  height: 12px;
+  background-color: var(--100);
+  border-radius: 50%;
+  position: absolute;
+  top: 25%;
+}
+
+.sliderButtonOff {
+  left: 6px;
+}
+
+.sliderButtonOn {
+  right: 6px;
+}
+
+.fade {
+  opacity: 25%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

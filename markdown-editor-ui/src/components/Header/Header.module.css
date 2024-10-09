@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-right: 16px;
+  background-color: var(--800);
+}
+
+.sidebarButton {
+  background-color: var(--700);
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.deleteButton {
+  background: var(--800);
+}
