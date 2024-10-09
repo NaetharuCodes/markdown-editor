@@ -25,11 +25,11 @@
 }
 
 .sliderButtonOff {
-  left: 6px;
+  right: 6px;
 }
 
 .sliderButtonOn {
-  right: 6px;
+  left: 6px;
 }
 
 .fade {

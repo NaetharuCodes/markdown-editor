@@ -1,39 +1,40 @@
-import Button from "./components/Button/Button";
 import styles from "./App.module.css";
-import Toggle from "./components/Toggle/Toggle";
-import { useState } from "react";
 import AppShell from "./components/AppShell/AppShell";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
-
-  const handleToggleDarkmode = () => {
-    setDarkMode(!darkMode);
-  };
-
   return (
     <AppShell>
       <div className={styles.container}>
-        <Button
-          text="Sample Button"
-          icon={
-            <svg
-              width="17"
-              height="17"
-              viewBox="0 0 17 17"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M10.5762 0.597622L15.9095 5.93095C16.0759 6.0987 16.1687 6.3258 16.1673 6.56207V13.6732C16.1673 15.1459 14.9734 16.3398 13.5006 16.3398H2.83398C1.36122 16.3398 0.167313 15.1459 0.167313 13.6732V3.00651C0.167313 1.53375 1.36122 0.339844 2.83398 0.339844H9.94509C10.064 0.342064 10.1815 0.36617 10.2918 0.410955C10.3977 0.454282 10.4943 0.517665 10.5762 0.597622ZM9.0562 2.11762H5.50065V3.8954H9.0562V2.11762ZM10.834 14.5621H5.50065V11.8954C5.50065 11.4045 5.89862 11.0065 6.38953 11.0065H9.94509C10.436 11.0065 10.834 11.4045 10.834 11.8954V14.5621ZM13.5006 14.5621C13.9916 14.5621 14.3895 14.1641 14.3895 13.6732V6.92651L10.834 3.37095V4.78429C10.834 5.27521 10.436 5.67318 9.94509 5.67318H4.61176C4.12084 5.67318 3.72287 5.27521 3.72287 4.78429V2.11762H2.83398C2.34306 2.11762 1.94509 2.51559 1.94509 3.00651V13.6732C1.94509 14.1641 2.34306 14.5621 2.83398 14.5621H3.72287V11.8954C3.72287 10.4226 4.91678 9.22873 6.38953 9.22873H9.94509C11.4178 9.22873 12.6118 10.4226 12.6118 11.8954V14.5621H13.5006Z"
-                fill="white"
-              />
-            </svg>
-          }
-          onClick={() => console.log("You Clicked")}
-        />
+        {/* Editor Section */}
+        <div className={styles.sectionContainer}>
+          <div className={`${styles.sectionHeader} app-heading-sm`}>
+            MARKDOWN
+          </div>
+        </div>
+
+        {/* Reader Section */}
+        <div className={styles.sectionContainer}>
+          <div className={`${styles.sectionHeader} app-heading-sm`}>
+            PREVIEW
+            <button className={styles.viewButton}>
+              <svg
+                width="16"
+                height="12"
+                viewBox="0 0 16 12"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  id="Combined Shape"
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M15.8929 5.20135C15.3811 4.3137 12.5662 -0.140531 7.78409 0.00341151C3.36184 0.115367 0.802861 4.00182 0.107137 5.20135C-0.0357124 5.44877 -0.0357124 5.7536 0.107137 6.00103C0.610937 6.87268 3.30587 11.199 8.01599 11.199H8.21591C12.6382 11.087 15.2051 7.20055 15.8929 6.00103C16.0357 5.7536 16.0357 5.44877 15.8929 5.20135ZM8.17593 9.5996C4.7293 9.67957 2.48219 6.72874 1.77847 5.60119C2.57816 4.3137 4.66533 1.68274 7.86405 1.60278C11.2947 1.51481 13.5498 4.47363 14.2615 5.60119C13.4378 6.88867 11.3747 9.51963 8.17593 9.5996ZM8 2.8023C6.45422 2.8023 5.20111 4.0554 5.20111 5.60119C5.20111 7.14697 6.45422 8.40007 8 8.40007C9.54578 8.40007 10.7989 7.14697 10.7989 5.60119C10.7989 4.0554 9.54578 2.8023 8 2.8023ZM8 6.80071C7.33752 6.80071 6.80048 6.26367 6.80048 5.60119C6.80048 4.93871 7.33752 4.40166 8 4.40166C8.66248 4.40166 9.19952 4.93871 9.19952 5.60119C9.19952 6.26367 8.66248 6.80071 8 6.80071Z"
+                  fill="#7C8187"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </AppShell>
   );

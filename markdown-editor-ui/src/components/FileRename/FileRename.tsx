@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styles from "./FileRename.module.css";
-import { addMarkdownExtension } from "../../utils/helpers";
 
 interface FileRenameProps {
   documentName: string;

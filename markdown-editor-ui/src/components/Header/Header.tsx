@@ -47,7 +47,7 @@ const Header = ({ toggleSidebar, openSidebar }: HeaderProps) => {
         )}
       </button>
       <div className={styles.input}>
-        <FileRename documentName="ImportantNodes.md" />
+        <FileRename documentName="ImportantNodes.md" onChange={() => {}} />
       </div>
       <button className={styles.deleteButton}>
         <svg

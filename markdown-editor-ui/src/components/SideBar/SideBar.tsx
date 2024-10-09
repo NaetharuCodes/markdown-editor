@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useTheme } from "../../contexts/ThemeContext";
 import Button from "../Button/Button";
 import DocumentEntry from "../DocumentEntry/DocumentEntry";
@@ -50,6 +51,14 @@ interface SideBarProps {
 
 const SideBar = ({ open }: SideBarProps) => {
   const { darkMode, toggleDarkMode } = useTheme();
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark-mode");
+    } else {
+      document.body.classList.remove("dark-mode");
+    }
+  }, [darkMode]);
 
   return (
     <div className={`${styles.container} ${open ? styles.openSidebar : ""}`}>
