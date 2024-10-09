@@ -1,0 +1,19 @@
+.button {
+  background-color: var(--orange);
+  color: var(--100);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  align-items: center;
+}
+
+.textOnlyPadding {
+  padding: 10px 44px;
+}
+
+.button:hover {
+  background-color: var(--orange-hover);
+}
