@@ -14,7 +14,7 @@ const Button = ({ text, icon, onClick }: ButtonProps) => {
       onClick={onClick}
     >
       {icon}
-      {text}
+      <span className={styles.text}>{text}</span>
     </button>
   );
 };

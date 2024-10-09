@@ -1,0 +1,33 @@
+.button {
+  border: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: transparent;
+  gap: 16px;
+  cursor: pointer;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.date {
+  color: var(--500);
+}
+
+.title {
+  color: var(--100);
+  background-color: var(--800);
+  border: none;
+  border-bottom: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  caret-color: var(--orange);
+}
+
+.title:hover {
+  border-bottom: 1px solid var(--100);
+}

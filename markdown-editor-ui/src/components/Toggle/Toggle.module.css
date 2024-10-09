@@ -1,10 +1,9 @@
 .button {
-  padding: 24px 28px;
   display: flex;
   gap: 12px;
   justify-content: center;
   align-items: center;
-  background-color: var(--800);
+  background-color: var(--900);
   border: none;
 }
 
