@@ -1,0 +1,9 @@
+.container {
+  padding: 16px;
+}
+
+.htmlContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}

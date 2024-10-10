@@ -1,7 +1,17 @@
+import { useState } from "react";
 import styles from "./App.module.css";
 import AppShell from "./components/AppShell/AppShell";
+import Editor from "./components/Editor/Editor";
+import Preview from "./components/Preview/Preview";
 
 function App() {
+  const [markdown, setMarkdown] = useState<string>("");
+
+  const handleUpdateMarkdown = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    console.log("e: ", e.target.value);
+    setMarkdown(e.target.value);
+  };
+
   return (
     <AppShell>
       <div className={styles.container}>
@@ -10,6 +20,7 @@ function App() {
           <div className={`${styles.sectionHeader} app-heading-sm`}>
             MARKDOWN
           </div>
+          <Editor markdown={markdown} onChange={handleUpdateMarkdown} />
         </div>
 
         {/* Reader Section */}
@@ -34,6 +45,7 @@ function App() {
               </svg>
             </button>
           </div>
+          <Preview rawString={markdown} />
         </div>
       </div>
     </AppShell>

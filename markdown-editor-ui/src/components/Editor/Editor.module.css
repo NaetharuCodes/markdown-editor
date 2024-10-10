@@ -1,0 +1,7 @@
+.editor {
+  flex-grow: 1;
+  outline: none;
+  padding: 16px;
+  border: none;
+  resize: none;
+}
